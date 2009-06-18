@@ -1,0 +1,63 @@
+##################################################################
+# Microsoft Developer Studio Generated NMAKE File
+# Modified by Timo Korhonen/VTT Building and Transport
+# Modified: a 'unix' style Makefile (Cygwin) by TK
+##################################################################
+#
+# Shell to be used
+SHELL =	/bin/bash
+#
+.SUFFIXES: .fpp .f .obj .c .f90
+# 
+# Name of the project (the main program)
+NAME =	CallOzone_Pfs
+# Files to be linked (and compiled)
+OBJS =	CallOzone_Pfs.obj 
+LINK32_OBJS =	"$(OBJS)"
+#
+# Fortran compiler options
+F90_PROJ = -compile_only -nologo -warn:nofileopt -optimize:4 \
+	 -integer_size:32
+#	-real_size:32
+# Debug:
+# F90_PROJ=-check:bounds -compile_only -dbglibs -debug:full -nologo \
+#          -traceback -warn:argument_checking -warn:nofileopt \
+#          -pdbfile:"DF60.PDB" 
+#
+# linker options
+LINK32_FLAGS=kernel32.lib -nologo -incremental:no \
+             -pdb:"$(NAME).pdb" -machine:I386 -dll
+#             -heap:10000000,10000000 -stack:10000000,10000000 
+#
+# Compilers and linker to be used
+CPP=cl.exe
+# Note, that there is a cygwin command df, so specify full path
+# F90="C:Program\ Files/Microsoft\ Visual\ Studio/df98/bin/f90.exe"
+F90="C:Program\ Files/Microsoft\ Visual\ Studio/df98/bin/df.exe"
+RSC=rc.exe
+LINK32=link.exe
+#
+# now define dependencies and activities
+#
+.for.obj:
+	"$(F90)" $(F90_PROJ) $<  
+.f.obj:
+	"$(F90)" $(F90_PROJ) $<
+.f90.obj:
+	"$(F90)" $(F90_PROJ) $<  
+.fpp.obj:
+	"$(F90)" $(F90_PROJ) $<  
+.c.obj:
+	"$(CPP)" $(CPP_PROJ) $<
+#
+#
+$(NAME).dll:	$(OBJS)
+	$(LINK32) $(LINK32_FLAGS) -out:$@ $(OBJS) 
+	echo 'Done ' $(NAME).dll
+all:	$(NAME).dll
+	echo 'Done all'
+clean:
+	rm $(NAME).dll $(OBJS)
+	echo 'Done clean'
+#
+##################################################################

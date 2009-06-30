@@ -3,7 +3,7 @@
 !*********************************************************
 !
 ! VTT Technical Research Centre of Finland      
-! Date:    24.06.2009
+! Date:    30.06.2009
 ! Version: PFS v4.0 
 !
 ! DISCLAIMER: This source file comes as it is.
@@ -448,6 +448,8 @@ subroutine CallFDS    (RunDir,                & ! running directory
   !--------------------!
   ! Some data analysis !
   !--------------------!
+
+  ! Do we really need this?
 
   if (.not. HRRError) then
     HRRTimeBegin=minval(HRRData(1:,1))

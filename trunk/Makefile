@@ -12,7 +12,7 @@ LD=link
 FCFLAGS=-compile_only -nologo -warn:nofileopt \
 				-optimize:4 -integer_size:32 -traceback
 LDFLAGS=kernel32.lib -nologo -incremental:no \
-				-pdb:$(NAME).pdb -machine:I386 -dll
+				-pdb:$*.pdb -machine:I386 -dll
 
 # Rules
 

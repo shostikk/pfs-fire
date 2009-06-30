@@ -1,5 +1,5 @@
 # A Makefile (Microsoft NMAKE) for building PFS subroutine
-# libraries CallCfast.dll, CallFDS.dll, CallOptimist.dll,
+# libraries CallCfast.dll, CallFds.dll, CallOptimist.dll,
 # CallOzone.dll and Statistics.dll
 
 # Compiler and linker
@@ -26,10 +26,10 @@ CallCfast.dll: $*.obj
 CallCfast.obj: $*.f90
 	$(FC) $(FCFLAGS) $*.f90
 
-CallFDS.dll: $*.obj
+CallFds.dll: $*.obj
 	$(LD) $(LDFLAGS) $*.obj
 
-CallFDS.obj: $*.f90
+CallFds.obj: $*.f90
 	$(FC) $(FCFLAGS) $*.f90
 
 # CallOptimist.dll requires IMSL numerical libraries

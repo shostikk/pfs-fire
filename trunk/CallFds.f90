@@ -547,6 +547,7 @@ subroutine CallFDS    (RunDir,                & ! running directory
           else if (Time > HRRTimeEnd) then
             Out(i,column)=HRRData(HRR_rows,j+1)
           else 
+            ! Interpolation of FDS data
             call interpolate(HRR_rows,HRRData(1:,1),(HRRData(1:,j+1)),&
               &Out(i,1),Out(i,column))
           end if
@@ -567,6 +568,7 @@ subroutine CallFDS    (RunDir,                & ! running directory
           else if (Time > DEVCTimeEnd) then
             Out(i,column)=DEVCData(DEVC_rows,j+1)
           else 
+            ! Interpolation of FDS data
             call interpolate(DEVC_rows,DEVCData(1:,1),(DEVCData(1:,j+1)),&
               &Out(i,1),Out(i,column))
           end if
@@ -587,6 +589,7 @@ subroutine CallFDS    (RunDir,                & ! running directory
           else if (Time > EVACTimeEnd) then
             Out(i,column)=EVACData(EVAC_rows,j+1)
           else 
+            ! Interpolation of FDS data
             call interpolate(EVAC_rows,EVACData(1:,1),(EVACData(1:,j+1)),&
               &Out(i,1),Out(i,column))
           end if

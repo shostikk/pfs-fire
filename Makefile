@@ -55,5 +55,10 @@ Statistics.obj: $*.f90 ranmar.for spear.for genprm.for dcdflib_all.for
 	$(FC) $(FCFLAGS) $*.f90 $?
 
 clean:
-	del *.dll *.obj *.exp *.lib *.mod
+	del CallCfast.dll CallFds.dll CallOptimist.dll CallOzone.dll Statistics.dll
+	del CallCfast.obj CallFds.obj CallOptimist.obj CallOzone.obj Statistics.obj
+	del CallCfast.exp CallFds.exp CallOptimist.exp CallOzone.exp Statistics.exp
+	del CallCfast.lib CallFds.lib CallOptimist.lib CallOzone.lib Statistics.lib
+	del comm.mod discharge.mod drops.mod stats.mod temps.mod vent.mod
+	del modules.obj temperatures.obj vent.obj
 	@echo 'Clean done'

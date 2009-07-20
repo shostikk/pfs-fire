@@ -18,7 +18,7 @@ LDFLAGS=kernel32.lib -nologo -incremental:no \
 
 all: CallCfast.dll CallFDS.dll CallOptimist.dll \
 	CallOzone.dll Statistics.dll
-	@ecgo 'All done'
+	@echo 'All done'
 
 CallCfast.dll: $*.obj
 	$(LD) $(LDFLAGS) $*.obj

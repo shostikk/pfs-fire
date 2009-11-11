@@ -534,7 +534,7 @@ subroutine CallFDS    (RunDir,                & ! running directory
   !-----------------------------------------!
 
   ! IMPROVEMENT SUGGESTION:
-  ! Make this one more simple
+  ! Make this simple
 
   Out=0.0
   do i=1,Ntimesteps+1
@@ -676,6 +676,7 @@ contains
     ! IMPROVEMENT SUGGESTION:
     ! The following search should be
     ! made using the bisection method
+
     i=1
     do while ((t(i) <= time) .and. (i < nrows))
       i=i+1

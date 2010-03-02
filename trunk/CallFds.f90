@@ -196,13 +196,6 @@ subroutine CallFDS    (RunDir,                & ! running directory
   if (InputError) then
     if (Debugmode) then
       write(dbgchannel,'(a)') 'ERROR: Problems with FDS control values'
-      write(dbgchannel,'(a)') 'NrO =',NrO
-      write(dbgchannel,'(a)') 'NcO =',NcO
-      write(dbgchannel,'(a)') 'NcO_HRR =',NcO_HRR
-      write(dbgchannel,'(a)') 'NcO_DEVC =',NcO_DEVC
-      write(dbgchannel,'(a)') 'NcO_EVAC =',NcO_EVAC
-      write(dbgchannel,'(a)') 'NcO_sum =',(NcO_HRR+NcO_DEVC+NcO_EVAC+1)
-
       close(dbgchannel)
     end if
     return ! TERMINATE PROGRAM EXECUTION

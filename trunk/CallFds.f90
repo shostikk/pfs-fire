@@ -81,12 +81,10 @@ subroutine CallFDS    (RunDir,                & ! running directory
   integer(kind=ik16) :: ioresultI
   integer(kind=ik32) :: ioresultI4, iochannel, iostat,dbgchannel
 
-  ! Make these strings longer
-
   character(len=250)  :: cDir ,cData ,cOut, cErr ,cCHID, FDSexe
   character(len=250)  :: HRRFile, TCFile, EVACFile, DelFile
   character(len=250)  :: HDFile, SPKFile
-  character(len=250)  :: input_line
+  character(len=2500) :: input_line
   character(len=10)   :: db_date, db_time
   character(len=1)    :: DataFilePrelim
   character(len=1)    :: HdrTmp
@@ -198,6 +196,13 @@ subroutine CallFDS    (RunDir,                & ! running directory
   if (InputError) then
     if (Debugmode) then
       write(dbgchannel,'(a)') 'ERROR: Problems with FDS control values'
+      write(dbgchannel,'(a)') 'NrO =',NrO
+      write(dbgchannel,'(a)') 'NcO =',NcO
+      write(dbgchannel,'(a)') 'NcO_HRR =',NcO_HRR
+      write(dbgchannel,'(a)') 'NcO_DEVC =',NcO_DEVC
+      write(dbgchannel,'(a)') 'NcO_EVAC =',NcO_EVAC
+      write(dbgchannel,'(a)') 'NcO_sum =',(NcO_HRR+NcO_DEVC+NcO_EVAC+1)
+
       close(dbgchannel)
     end if
     return ! TERMINATE PROGRAM EXECUTION

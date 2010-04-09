@@ -138,7 +138,10 @@ subroutine CallFDS    (RunDir,                & ! running directory
 
   Debugmode=.false.
   Savemode=.false.
-  if (abs(RunMode) == 1) Debugmode=.true.
+  if (abs(RunMode) == 1) then
+    Debugmode=.true.
+    Savemode=.true.
+  end if
   if (abs(RunMode) == 2) Savemode=.true.
 
   !------------!

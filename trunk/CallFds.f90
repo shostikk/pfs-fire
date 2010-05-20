@@ -24,7 +24,7 @@ subroutine CallFDS    (RunDir,                & ! running directory
                        DataFile,              & ! FDS input
                        OutFile,               & ! FDS output
                        CHID,                  & ! CHID string
-                       cFDSexe,               & ! name of the FDS executable (e.g. fds4.exe)
+                       cFDSexe,               & ! name of the FDS executable (e.g. fds5.exe)
                        FDSVersion,            & ! FDS version number
                        MaxRunTime,            & ! Maximum running time (seconds)
                        RunMode)                 ! Normal, debug, savemode
